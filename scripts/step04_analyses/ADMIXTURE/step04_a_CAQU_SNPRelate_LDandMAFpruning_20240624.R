@@ -34,7 +34,7 @@ snpset_maf01_ld2 <- snpgdsLDpruning(genofile, ld.threshold = 0.2, maf = .01, aut
 snpset_id_maf01_ld2 <- unlist(unname(snpset_maf01_ld2))
 
 # Output new GDS files to use in SeqArray/PLINK/Admixture
-snpgdsCreateGenoSet(gdsfile,paste0(<insert patht to .gds file of all pass SNPs>,"_maf01_ld2_AllSamps.gds"),snp.id=snpset_id_maf01_ld2, sample.id=all_samples)
+snpgdsCreateGenoSet(gdsfile,paste0(<insert patht to .gds file of all pass SNPs>,"_maf01_ld2_allsamples.gds"),snp.id=snpset_id_maf01_ld2, sample.id=all_samples)
 
 # Confirm that subset worked
 gdsfmt::showfile.gds(closeall=TRUE)
