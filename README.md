@@ -1,6 +1,6 @@
 ## Quail Genomics Project
 
-This github repository contains all the scripts for genotyping, analyzing and plotting from the manuscript:
+This github repository contains all the scripts for genotyping, analysis and plotting of whole genome re-sequencing data used in the manuscript:
 
 Does the quail cross the road? Evaluating roadways as barriers to gene flow in a north american ground-dwelling bird
 
