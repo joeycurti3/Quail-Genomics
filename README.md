@@ -1,4 +1,4 @@
-##Quail Genomics Project##
+## Quail Genomics Project
 
 This github repository contains all the scripts for genotyping, analyzing and plotting from the manuscript:
 
