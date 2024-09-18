@@ -1,4 +1,4 @@
-## Create a .bed file from .gff file from RepeatMasker output ## 
+## Sort MASK .bed file and remove header for use with GATK ## 
 
 # I first sorted the BED file by the first column (scaffold name) and then by the second column (start position):
 
