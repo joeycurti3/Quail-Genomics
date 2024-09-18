@@ -1,6 +1,6 @@
 These intervals are based on the CAQU reference genome (GCA_023055505.1_bCalCai1.0.p) and are the following format:
 
-<name> <start> <end>
+#<name> <start> <end>
 
 Where start coordinates are always zero since this is a scaffold-level assembly. I've also excluded scaffolds that map to CAQU sex chromosomes, specifically: 
 
