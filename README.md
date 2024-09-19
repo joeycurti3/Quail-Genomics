@@ -1,4 +1,4 @@
-## Quail Genomics Project
+## California Quail Genomics Project
 
 This github repository contains all the scripts for genotyping, analysis and plotting of whole genome re-sequencing data used in the manuscript:
 
