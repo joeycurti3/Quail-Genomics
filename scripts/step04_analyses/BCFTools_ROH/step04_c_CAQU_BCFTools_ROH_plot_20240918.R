@@ -5,8 +5,8 @@
 # Author: Joseph Curti (jcurti3@g.ucla.edu)
 # Adapted From: Chris Kyriazis
 # Description: Bin ROH outputs and visualize
-# Version: V3 - Removing Hollywood Res sample
-# Date: WED SEP 18 2024
+# Version: V4 - Cleaned up for github, made plotting text bigger
+# Date: THU MAR 06 2025
 
 ## References
 #https://github.com/ckyriazis/moose_WGS_project/blob/master/plotting/bcftools_roh_plot_moose.R
@@ -14,7 +14,7 @@
 ## Clean Workspace, Set WD 
 
 rm(list = ls())
-setwd(<insert working directory with ROH output files>)
+setwd("~/Downloads/")
 
 ## Dependencies 
 
@@ -166,14 +166,14 @@ individuals <- c(
 )
 
 locality <- c(
-  "W_MalibuCyn", "E_MalibuCyn", "W_I405", "W_I405", "W_I405", "N_US101", "E_I405", "E_I405", 
-  "W_MalibuCyn", "S_US101", "E_MalibuCyn", "E_MalibuCyn", "N_US101", "W_MalibuCyn", "S_US101", 
-  "S_US101", "N_US101", "E_I405", "N_US101", "W_I405", "E_I405", "N_US101", "W_I405", "S_US101", 
-  "S_StuntRd", "W_I405", "N_US101", "N_US101", "N_US101", "W_I405", "S_US101", "W_I405", "N_US101", 
-  "E_TopangaCyn", "S_US101", "E_I405", "S_StuntRd", "W_I405", "E_I405", "S_StuntRd", "E_TopangaCyn", "W_I405", 
-  "E_TopangaCyn", "N_US101", "S_US101", "N_US101", "N_US101", "PacificPallisades", 
-  "E_KananRd", "NewburyPark", "W_KananRd", "MonteNido", "E_TopangaCyn", "CorralCyn", "E_N23", 
-  "SouthernClade", "SouthernClade", "SouthernClade", "NorthernClade", "NorthernClade", "NorthernClade"
+  "W. Malibu Cyn.", "E. Malibu Cyn.", "W. I405", "W. I405", "W. I405", "N. US101", "E. I405", "E. I405", 
+  "W. Malibu Cyn.", "S. US101", "E. Malibu Cyn.", "E. Malibu Cyn.", "N. US101", "W. Malibu Cyn.", "S. US101", 
+  "S. US101", "N. US101", "E. I405", "N. US101", "W. I405", "E. I405", "N. US101", "W. I405", "S. US101", 
+  "S. Stunt Rd.", "W. I405", "N. US101", "N. US101", "N. US101", "W. I405", "S. US101", "W. I405", "N. US101", 
+  "E. Topanga Cyn.", "S. US101", "E. I405", "S. Stunt Rd.", "W. I405", "E. I405", "S. Stunt Rd.", "E. Topanga Cyn.", "W. I405", 
+  "E. Topanga Cyn.", "N. US101", "S. US101", "N. US101", "N. US101", "Pacific Palisades", 
+  "E. Kanan Rd.", "Newbury Park", "W. Kanan Rd.", "Monte Nido", "E. Topanga Cyn.", "Corral Cyn.", "N23 Hwy.", 
+  "SOCAL", "SOCAL", "SOCAL", "NORCAL", "NORCAL", "NORCAL"
 )
 
 pop_data <- data.frame(individuals,locality)
@@ -184,13 +184,13 @@ roh_size_df_pop <- merge(roh_size_df_tidy_long,pop_data,by.x='Sample_name',by.y=
 
 # Reorder so that you move from Western SAMO to Eastern SAMO
 
-roh_size_df_pop$locality <- factor(roh_size_df_pop$locality, levels=c("NorthernClade","NewburyPark",
-                                                                    "E_N23","W_KananRd","E_KananRd",
-                                                                    "N_US101","S_US101","W_MalibuCyn",
-                                                                    "E_MalibuCyn","E_TopangaCyn","MonteNido",
-                                                                    "S_StuntRd", "CorralCyn","PacificPallisades",
-                                                                    "W_I405","E_I405",
-                                                                    "SouthernClade"), ordered = T)
+roh_size_df_pop$locality <- factor(roh_size_df_pop$locality, levels=c("NORCAL","Newbury Park",
+                                                                    "N23 Hwy.","W. Kanan Rd.","E. Kanan Rd.",
+                                                                    "N. US101","S. US101","W. Malibu Cyn.",
+                                                                    "E. Malibu Cyn.","E. Topanga Cyn.","Monte Nido",
+                                                                    "S. Stunt Rd.", "Corral Cyn.","Pacific Palisades",
+                                                                    "W. I405","E. I405",
+                                                                    "SOCAL"), ordered = T)
 
 # plot it
 
@@ -204,41 +204,20 @@ roh_size_plot <- ggplot(roh_size_df_pop, aes(x = interaction(Sample_name,localit
                     labels = c(paste(min_roh_length/1000000,"-1 Mb",sep=""), "1-10 Mb", "10-100 Mb"),
                     name = "ROH Size") +
   theme_pubclean() +
-  theme(axis.text.x = element_text(angle = 90,hjust=1.02,vjust=.5,size=9),
-        ggh4x.axis.nesttext.x = element_text(angle = 90,hjust=1)) + 
+  theme(axis.text.x = element_text(angle = 90,hjust=1.02,vjust=.5,size=10),
+        axis.text.y = element_text(size=20),
+        ggh4x.axis.nesttext.x = element_text(angle = 90,hjust=.8,size = 15),
+        axis.title = element_text(size=25),
+        legend.text = element_text(size=20),
+        legend.title = element_text(size=20),
+        axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0)),
+        axis.title.x = element_text(margin = margin(t = 10, r = 0, b = 0, l = 0))
+        ) + 
   scale_x_discrete(guide = guide_axis_nested(delim = "!",extend = .8), 
                    name = "Locality") +
   labs(x="Sample", y="Summed ROH length (Mb)")
 
-ggsave(plot = roh_size_plot,"roh_size_plot_20240903.png",device="png",dpi=400)
-
-## Make bar plots of FROH and ROH by length for each populations
-
-
-# Merge F_ROH df with the sample pop map
-
-froh_merged_df <- merge(froh_df,pop_data,by.x='individuals',by.y='individuals')
-
-# Reorder so that you move from Western SAMO to Eastern SAMO
-
-froh_merged_df$locality <- factor(froh_merged_df$locality, levels=c("NorthernClade","NewburyPark",
-                                                          "E_N23","W_KananRd","E_KananRd",
-                                                          "N_US101","S_US101","W_MalibuCyn",
-                                                          "E_MalibuCyn","E_TopangaCyn","MonteNido",
-                                                          "S_StuntRd", "CorralCyn","PacificPallisades",
-                                                          "W_I405","E_I405",
-                                                          "SouthernClade"), ordered = T)
-
-# Plot it
-
-Froh_pop_plot <- ggplot(froh_merged_df, aes(x=locality, y=as.numeric.froh_total.)) + 
-  geom_boxplot() + 
-  geom_hline(yintercept=mean(froh_merged_df$as.numeric.froh_total.),linetype="dashed", color = "red", linewidth=1) +
-  theme_pubclean() + 
-  theme(axis.text.x = element_text(angle = 45, hjust=1)) +
-  labs(y = bquote(F[ROH]),x="Population")
-
-ggsave(plot=Froh_pop_plot,"CAQU_FROHbyPop_20240627.PNG",device="png",dpi=300)
+ggsave(plot = roh_size_plot,"roh_size_plot_20250506.png",device="png",dpi=400, height = 8, width = 10)
 
 ## New boxplot between NORCAL, SAMO, and SOCAL, with significance testing
 
@@ -275,88 +254,17 @@ kw_test <- kruskal.test(froh ~ state_site, data = froh_df_state)
 
 Froh_state_barplot <- ggplot(froh_df_state, aes(x=state_site,y=froh,fill=state_site)) +
   geom_boxplot() + 
-  labs(y=expression(F[ROH]),x="\nSampling Location") +
+  labs(y=expression(F[ROH]),x="\nLocality") +
   scale_fill_manual(values=c("seashell","seashell2","seashell3")) +
   scale_x_discrete(labels=c("NORCAL","SAMO","SOCAL")) +
   theme_pubclean() +
-  theme(legend.position = "none")
+  theme(legend.position = "none",
+        axis.text = element_text(size=15),
+        axis.title = element_text(size=20),
+        axis.title.y = element_text(margin = margin(t = 0, r = 10, b = 0, l = 0)))
 
-ggsave("FROHbyStateSite_CAQU_20240903.png",plot = Froh_state_barplot, device="png",dpi=400,heigh=5, width = 6)
+ggsave("FROHbyStateSite_CAQU_20250305.png",plot = Froh_state_barplot, device="png",dpi=400,heigh=5, width = 6)
 
-## New boxplot of just the 405 and 101 samples against everything else 
-
-froh_df_final <- read.csv("~/Downloads/20240902_CAQU_seq_metadata.csv",sep=",",header = T,stringsAsFactors = F)
-froh_df_final <- froh_df_final[-1,] # Remove Hollywood Res sample
-froh_df_final$groups <- NA
-
-froh_df_final %>% #Add in grouping variable for ggplot
-  mutate(groups = case_when((locality == "S_US101") ~ "a",
-                             (locality == "N_US101") ~ "a",
-                             (locality == "W_I405") ~ "a",
-                             (locality == "E_I405") ~ "a",
-                             .default = "b")) %>%
-  group_by(groups) %>% summarise(n = n()) # Test to see if the counts make sense
-
-# groups     n
-# <chr>  <int>
-# 1 a         35
-# 2 b         26
-# They do! 
-
-froh_df_final_plot <- froh_df_final %>%
-  mutate(groups = case_when((locality == "S_US101") ~ "a",
-                            (locality == "N_US101") ~ "a",
-                            (locality == "W_I405") ~ "a",
-                            (locality == "E_I405") ~ "a",
-                            .default = "b"))
-
-
-# Plot it
-
-Froh_2pop_barplot <- ggplot(froh_df_final_plot, aes(x=groups,y=froh,fill=groups)) +
-  geom_boxplot() + 
-  labs(y=expression(F[ROH]),x="") +
-  scale_fill_manual(values=c("seashell3","seashell")) +
-  scale_x_discrete(labels=c("US101 & I405","All Other Roads")) +
-  theme_pubr() +
-  geom_signif(comparisons = list(c("a", "b")), 
-              map_signif_level=TRUE,
-              annotations = "n.s.",
-              y_position = 0.1) +
-  theme(legend.position = "none")
-
-ggsave("20240718_FROH_405and101comparisonplot.png",plot=Froh_2pop_barplot,device = "png",dpi=300)
-
-## Now make boxplot with the three binned sizes b/w 405/101 and everything else
-
-froh_merged_df_groups <- merge(roh_size_df_tidy_long,pop_data,by.x='Sample_name',by.y='individuals')
-
-froh_merged_df_groups$groups <- NA
-
-froh_merged_df_groups <- froh_merged_df_groups %>% #Add in grouping variable for ggplot
-  mutate(groups = case_when((locality == "S_US101") ~ "a",
-                            (locality == "N_US101") ~ "a",
-                            (locality == "W_I405") ~ "a",
-                            (locality == "E_I405") ~ "a",
-                            .default = "b")) 
-
-# Plot it
-
-Froh_2pop_barplot_bysize <- ggplot(froh_merged_df_groups, aes(x=groups,y=value,fill=ROH_type)) +
-  geom_boxplot(position = "dodge") + 
-  geom_text(label="n=0",x=1.75, y=2.7) +
-  labs(y=expression(F[ROH]),x="") +
-  scale_fill_manual(values=c("seashell3","seashell2","seashell")) +
-  scale_x_discrete(labels=c("US101 & I405","All Other Roads")) +
-  theme_pubr() +
-  geom_signif(map_signif_level=TRUE,
-              annotations = c("n.s.","n.s."),
-              y_position = c(80, 90),
-              xmin=c(1,1.3),
-              xmax=c(2,2.3)) +
-  theme(legend.position = "none") 
-
-ggsave(plot=Froh_2pop_barplot_bysize, "20240718_FROH_405and101comparisonplot_bysize.png",device="png",dpi=300)
 
 ## The last plot I want to make uses bins based on generation time
 
@@ -364,9 +272,6 @@ ggsave(plot=Froh_2pop_barplot_bysize, "20240718_FROH_405and101comparisonplot_bys
 # "Genome-wide diversity in the California condor tracks its prehistoric abundance and decline" and based on a 
 # formula in Stoffel et al. 2021, "Genetic architecture and lifetime dynamics of inbreeding depression in a wild mammal"
 
-# Set WD 
-
-setwd("~/Downloads/ROH_2024/")
 
 # Define Variables 
 
@@ -483,14 +388,14 @@ roh_size_df_g_tidy_long_merged <- merge(roh_size_df_g_tidy_long,pop_data,by.x='S
 roh_size_df_g_tidy_long_merged$groups <- NA # initialize empty column
 
 roh_size_df_g_tidy_long_merged_groups <- roh_size_df_g_tidy_long_merged %>% #Add in grouping variable for ggplot
-  mutate(groups = case_when((locality == "S_US101") ~ "I405 & US101",
-                            (locality == "N_US101") ~ "I405 & US101",
-                            (locality == "W_I405") ~ "I405 & US101",
-                            (locality == "E_I405") ~ "I405 & US101",
-                            .default = "All Other Roads")) 
+  mutate(groups = case_when((locality == "S. US101") ~ "I405 & US101",
+                            (locality == "N. US101") ~ "I405 & US101",
+                            (locality == "W. I405") ~ "I405 & US101",
+                            (locality == "E. I405") ~ "I405 & US101",
+                            .default = "All Other Sites")) 
 
 roh_size_df_g_tidy_long_merged_groups$groups <- factor(roh_size_df_g_tidy_long_merged_groups$groups,
-                                                       levels=c("I405 & US101","All Other Roads"), ordered = T)
+                                                       levels=c("I405 & US101","All Other Sites"), ordered = T)
 
 
 # plot it
@@ -518,89 +423,9 @@ roh_age_plot_groups <- ggplot(roh_size_df_g_tidy_long_merged_groups, aes(x=ROH_t
   theme_pubclean() +
   theme(axis.text.x = element_text(angle=45, vjust = .55),
         axis.text = element_text(size = 15),
-        axis.title = element_text(size = 15),
-        legend.text = element_text(size = 15),
+        axis.title = element_text(size = 20),
+        legend.text = element_text(size = 20),
         legend.position = "right",
-        legend.key = element_rect(fill = NA, color = NA, linewidth = .1)) 
+        legend.key = element_rect(fill = NA, color = NA, linewidth = .1))
 
-
-ggsave(plot=roh_age_plot_groups,file="CAQU_roh_age_plot_groups_20240903.png",device="png",dpi=300, height=5,width = 8)
-
-
-## Now output CSV files for samples for I405 and US101 samples seperately. Will use these in next script
-# to test for differences between these groups.
-
-#2-4g
-ttest_g2_g4_405and101 <- roh_size_df_g_tidy_long_merged_groups %>%
-  filter(groups == "I405 & US101" & ROH_time == "roh_g2_g4") %>%
-  pull(value)
-
-write.csv(ttest_g2_g4_405and101,file="g2_g4_405and101.csv",row.names = F)
-
-ttest_g2_g4_405and101_df <- data.frame(ttest_g2_g4_405and101)
-ttest_g2_g4_405and101_df$group <- "I405 & US101"
-colnames(ttest_g2_g4_405and101_df) <- c("roh","location")
-
-ttest_g2_g4_otherroads <- roh_size_df_g_tidy_long_merged_groups %>%
-  filter(groups == "All Other Roads" & ROH_time == "roh_g2_g4") %>%
-  pull(value)
-
-write.csv(ttest_g2_g4_otherroads,file="g2_g4_otherroads.csv",row.names = F)
-
-#4-8g
-ttest_g4_g8_405and101 <- roh_size_df_g_tidy_long_merged_groups %>%
-  filter(groups == "I405 & US101" & ROH_time == "roh_g4_g8") %>%
-  pull(value)
-
-write.csv(ttest_g4_g8_405and101,file="g4_g8_405and101.csv",row.names = F)
-
-
-ttest_g4_g8_otherroads <- roh_size_df_g_tidy_long_merged_groups %>%
-  filter(groups == "All Other Roads" & ROH_time == "roh_g4_g8") %>%
-  pull(value)
-
-write.csv(ttest_g4_g8_otherroads,file="g4_g8_otherroads.csv",row.names = F)
-
-#8-16g
-
-ttest_g8_g16_405and101 <- roh_size_df_g_tidy_long_merged_groups %>%
-  filter(groups == "I405 & US101" & ROH_time == "roh_g8_g16") %>%
-  pull(value)
-
-write.csv(ttest_g8_g16_405and101,file="g8g16_405and101.csv",row.names = F)
-
-ttest_g8_g16_otherroads <- roh_size_df_g_tidy_long_merged_groups %>%
-  filter(groups == "All Other Roads" & ROH_time == "roh_g8_g16") %>%
-  pull(value)
-
-write.csv(ttest_g8_g16_otherroads,file="g8g16_otherroads.csv",row.names = F)
-
-#16-32g
-
-ttest_g16_g32_405and101 <- roh_size_df_g_tidy_long_merged_groups %>%
-  filter(groups == "I405 & US101" & ROH_time == "roh_g16_g32") %>%
-  pull(value)
-
-write.csv(ttest_g16_g32_405and101,file="g16g32_405and101.csv",row.names = F)
-
-ttest_g16_g32_otherroads <- roh_size_df_g_tidy_long_merged_groups %>%
-  filter(groups == "All Other Roads" & ROH_time == "roh_g16_g32") %>%
-  pull(value)
-
-write.csv(ttest_g16_g32_otherroads,file="g16g32_otherroads.csv",row.names = F)
-
-#>32g
-
-ttest_g32_min_405and101 <- roh_size_df_g_tidy_long_merged_groups %>%
-  filter(groups == "I405 & US101" & ROH_time == "roh_g32_min") %>%
-  pull(value)
-
-write.csv(ttest_g32_min_405and101,file="g32_405and101.csv",row.names = F)
-
-ttest_g32_min_otherroads <- roh_size_df_g_tidy_long_merged_groups %>%
-  filter(groups == "All Other Roads" & ROH_time == "roh_g32_min") %>%
-  pull(value)
-
-write.csv(ttest_g32_min_otherroads,file="g32_otherroads.csv",row.names = F)
-
-  
+ggsave(plot=roh_age_plot_groups,file="CAQU_roh_age_plot_groups_20250306.png",device="png",dpi=300, height=5,width = 8)
