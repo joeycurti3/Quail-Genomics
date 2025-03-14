@@ -3,11 +3,12 @@
 #######################################################################################
 
 # Author: Joey Curti 
-# Date: MON SEP 02 2024
+# Date: THU MAR 06 2025
 # Description: test for significance in mean_het between populations
 # References:
 # https://cran.r-project.org/web/packages/afex/vignettes/assumptions_of_ANOVAs.html
 # http://www.sthda.com/english/wiki/kruskal-wallis-test-in-r
+# Version: V2 - increasing text size and labels for publication
 
 ## Clean Workspace and set working directory
 
@@ -24,7 +25,7 @@ library(rstatix)
 
 ## Read in data 
 
-data <- read.csv(<insert path to mean_het.csv>,stringsAsFactors = F, header = T, sep = ",")
+data <- read.csv("~/Downloads/20240902_CAQU_seq_metadata.csv",stringsAsFactors = F, header = T, sep = ",")
 data_tidy <- data[-1,c(-28:-39)]
 
 ## Main 
@@ -77,7 +78,10 @@ pp2 <- ggplot(data=data_tidy, aes(x=state_site, y=mean_het, fill=state_site)) +
   geom_boxplot(show.legend = F) +
   theme_pubclean() +
   scale_fill_manual(values=c("seashell","seashell2","seashell3"),name="") +
-  labs(x="\nSampling Location", y = expression(paste("Heterozygosity (", bp^{-1},")"))) +
+  labs(x="\nLocality", y = expression(paste("Heterozygosity (", bp^{-1},")"))) +
+  theme(axis.title = element_text(size=20),
+        axis.text = element_text(size=15),
+        axis.title.y = element_text(margin = margin(t = 0, r = 15, b = 0, l = 0))) +
   geom_signif(annotations = c("*"),
               y_position = .00551,
               xmin = 1,
@@ -86,5 +90,4 @@ pp2 <- ggplot(data=data_tidy, aes(x=state_site, y=mean_het, fill=state_site)) +
               fontface="bold",
               vjust = .1)
 
-ggsave("20240902_CAQU_hetsignif.png",plot=pp2,dpi=400,width = 6,height = 5)
-
+ggsave("20250306_CAQU_hetsignif.png",plot=pp2,dpi=400,width = 6,height = 5)
