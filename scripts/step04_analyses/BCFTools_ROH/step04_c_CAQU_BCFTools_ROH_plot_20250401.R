@@ -429,3 +429,79 @@ roh_age_plot_groups <- ggplot(roh_size_df_g_tidy_long_merged_groups, aes(x=ROH_t
         legend.key = element_rect(fill = NA, color = NA, linewidth = .1))
 
 ggsave(plot=roh_age_plot_groups,file="CAQU_roh_age_plot_groups_20250306.png",device="png",dpi=300, height=5,width = 8)
+
+## Now output CSV files for samples for I405 and US101 samples seperately. Will use these in next script
+# to test for differences between these groups.
+
+#2-4g
+ttest_g2_g4_405and101 <- roh_size_df_g_tidy_long_merged_groups %>%
+  filter(groups == "I405 & US101" & ROH_time == "roh_g2_g4") %>%
+  pull(value)
+
+write.csv(ttest_g2_g4_405and101,file="g2_g4_405and101.csv",row.names = F)
+
+ttest_g2_g4_405and101_df <- data.frame(ttest_g2_g4_405and101)
+ttest_g2_g4_405and101_df$group <- "I405 & US101"
+colnames(ttest_g2_g4_405and101_df) <- c("roh","location")
+
+ttest_g2_g4_otherroads <- roh_size_df_g_tidy_long_merged_groups %>%
+  filter(groups == "All Other Roads" & ROH_time == "roh_g2_g4") %>%
+  pull(value)
+
+write.csv(ttest_g2_g4_otherroads,file="g2_g4_otherroads.csv",row.names = F)
+
+#4-8g
+ttest_g4_g8_405and101 <- roh_size_df_g_tidy_long_merged_groups %>%
+  filter(groups == "I405 & US101" & ROH_time == "roh_g4_g8") %>%
+  pull(value)
+
+write.csv(ttest_g4_g8_405and101,file="g4_g8_405and101.csv",row.names = F)
+
+
+ttest_g4_g8_otherroads <- roh_size_df_g_tidy_long_merged_groups %>%
+  filter(groups == "All Other Roads" & ROH_time == "roh_g4_g8") %>%
+  pull(value)
+
+write.csv(ttest_g4_g8_otherroads,file="g4_g8_otherroads.csv",row.names = F)
+
+#8-16g
+
+ttest_g8_g16_405and101 <- roh_size_df_g_tidy_long_merged_groups %>%
+  filter(groups == "I405 & US101" & ROH_time == "roh_g8_g16") %>%
+  pull(value)
+
+write.csv(ttest_g8_g16_405and101,file="g8g16_405and101.csv",row.names = F)
+
+ttest_g8_g16_otherroads <- roh_size_df_g_tidy_long_merged_groups %>%
+  filter(groups == "All Other Roads" & ROH_time == "roh_g8_g16") %>%
+  pull(value)
+
+write.csv(ttest_g8_g16_otherroads,file="g8g16_otherroads.csv",row.names = F)
+
+#16-32g
+
+ttest_g16_g32_405and101 <- roh_size_df_g_tidy_long_merged_groups %>%
+  filter(groups == "I405 & US101" & ROH_time == "roh_g16_g32") %>%
+  pull(value)
+
+write.csv(ttest_g16_g32_405and101,file="g16g32_405and101.csv",row.names = F)
+
+ttest_g16_g32_otherroads <- roh_size_df_g_tidy_long_merged_groups %>%
+  filter(groups == "All Other Roads" & ROH_time == "roh_g16_g32") %>%
+  pull(value)
+
+write.csv(ttest_g16_g32_otherroads,file="g16g32_otherroads.csv",row.names = F)
+
+#>32g
+
+ttest_g32_min_405and101 <- roh_size_df_g_tidy_long_merged_groups %>%
+  filter(groups == "I405 & US101" & ROH_time == "roh_g32_min") %>%
+  pull(value)
+
+write.csv(ttest_g32_min_405and101,file="g32_405and101.csv",row.names = F)
+
+ttest_g32_min_otherroads <- roh_size_df_g_tidy_long_merged_groups %>%
+  filter(groups == "All Other Roads" & ROH_time == "roh_g32_min") %>%
+  pull(value)
+
+write.csv(ttest_g32_min_otherroads,file="g32_otherroads.csv",row.names = F)
