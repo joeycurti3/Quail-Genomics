@@ -4,15 +4,19 @@ name start end
 
 Where start coordinates are always zero since this is a scaffold-level assembly. I've also excluded scaffolds that map to CAQU sex chromosomes, specifically: 
 
-JALIRH010000009.1
-JALIRH010000023.1
-JALIRH010000025.1
-JALIRH010000031.1
-JALIRH010000041.1
-JALIRH010000049.1
-JALIRH010000052.1
-JALIRH010000066.1
-JALIRH010000062.1
-JALIRH010000085.1
-JALIRH010000094.1
-JALIRH010000103.1
+- JALIRH010000009.1
+- JALIRH010000023.1
+- JALIRH010000025.1
+- JALIRH010000031.1
+- JALIRH010000041.1
+- JALIRH010000049.1
+- JALIRH010000052.1
+- JALIRH010000066.1
+- JALIRH010000062.1
+- JALIRH010000085.1
+- JALIRH010000094.1
+- JALIRH010000103.1
+
+The script step03_a_CAQU_GetIntervals_20240918.R generates these BED files and takes "GCA_023055505.1_bCalCai1.0.p_assembly_report.txt" as input. This file is found on the NCBI website via the following link: 
+
+https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/023/055/505/GCA_023055505.1_bCalCai1.0.p/GCA_023055505.1_bCalCai1.0.p_assembly_report.txt
