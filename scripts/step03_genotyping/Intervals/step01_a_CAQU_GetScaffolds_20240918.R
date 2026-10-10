@@ -1,4 +1,6 @@
-### Script for getting long scaffolds from hog deer reference genome ###
+################################################################################
+### Script for getting long scaffolds from California quail reference genome ###
+################################################################################
 
 # Author: Chris Kyriazis
 # Adapted by: Joseph Curti (jcurti3@g.ucla.edu)
@@ -33,8 +35,6 @@ total_len-sum(head(sort(table$Sequence.Length, decreasing = T), n = n_scaf_long)
 table_sorted <- table[order(-table$Sequence.Length),]
 df_large_scafs <- head(table_sorted, n=n_scaf_long)
 dim(df_large_scafs)
-
-write.csv(x = df_large_scafs, file = "hogdeer_scaffs_1Mb.csv")
 
 plot(table_sorted$Sequence.Length, log="y")
 plot(df_large_scafs$Sequence.Length)
