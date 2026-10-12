@@ -1,4 +1,4 @@
-'Scripts' directory is broken down into four subdirectories: 
+### <ins>'Scripts' directory is broken down into four subdirectories:</ins>
 
 1) step01_sequencing: scripts for checking md5 sums of sequence data, downloading and preparing the reference genome, etc.
 2) step02_preprocessing: all steps in the process up to joint genotype calling, including aligning FASTQ to reference, SAM to BAM conversion, GATK MarkDuplicates, and GATK HaplotypeCaller
