@@ -1,4 +1,4 @@
-The following files/scripts are in this directory and should be executed in this order: 
+### <ins>The following files/scripts are in this directory and should be executed in this order:</ins> 
 
 1. run_step04_a_CAQU_SNPRelate_LDandMAFpruning_20240624.sh - Wrapper script required to submit Step 2
 2. step04_a_CAQU_SNPRelate_LDandMAFpruning_20240624.R - Perform linkage and MAF pruning on GFS file, output new GDS file (input to Step 4)
