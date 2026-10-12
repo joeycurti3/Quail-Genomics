@@ -16,6 +16,7 @@
 14. params.chain2.ndemes300.NHR - EEMS parameters file for nDemes = 300 and for the second MCMC chain
 15. params.chain3.ndemes300.NHR - EEMS parameters file for nDemes = 300 and for the third MCMC chain
 16. samples_v2.txt - Sample names for input into Step 1
+17. GCA_023055505.1_bCalCai1.0.p_PassSNPs_unrelated_SAMO_chr1.coord - Coordinates for polygon around area where EEMS analysis will run, needs to have same prefix as outputs of Step 1
 
 ### <ins>Important note to run these scripts:</ins> 
 Currently, bed2diffs cannot handle organisms with atypical chromosomal configurations (i.e., scaffold level assemblies).
@@ -36,3 +37,9 @@ awk '{print 1,$2,$3,$4,$5,$6}' datapath.bim  > newdatapath.bim
 | :---: | :---: | :---: | :---: | 
 | Column 1 | numeric | Family ID (FID) field required by PLINK, set to zero because no information about family structure | NA |
 | Column 2 | character | Sample name | NA |
+
+#### *GCA_023055505.1_bCalCai1.0.p_PassSNPs_unrelated_SAMO_chr1.coord*
+| Column Name | Data Type | Description | Comments |
+| :---: | :---: | :---: | :---: | 
+| Column 1 | numeric | Longitude of point in perimeter polygon | EPSG:4269: NAD83 |
+| Column 2 | numeric | Latitude of point in perimeter polygon | EPSG:4269: NAD83 |
