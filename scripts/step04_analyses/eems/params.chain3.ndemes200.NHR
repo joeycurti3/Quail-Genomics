@@ -1,0 +1,12 @@
+datapath = /u/home/1/1joeynik/project-rwayne/CAQU/scripts/step04_analyses/2024/eems/GCA_023055505.1_bCalCai1.0.p_PassSNPs_unrelated_SAMO_NoHollywoodRes_chr1
+mcmcpath = /u/home/1/1joeynik/project-rwayne/CAQU/scripts/step04_analyses/2024/eems/outputs_NoHollywoodRes/nIndiv56-nSites25199223-nDemes200-chain3
+nIndiv = 55
+nSites = 25199223
+nDemes = 200
+diploid = true
+numMCMCIter = 5000000
+numBurnIter = 2500000
+numThinIter = 9999
+qEffctProposalS2 = 0.009
+mEffctProposalS2 = 2.5
+mrateMuProposalS2 = 0.03
