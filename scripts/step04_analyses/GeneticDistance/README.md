@@ -1,4 +1,4 @@
-The following files/scripts are in this directory and should be executed in this order: 
+### <ins>The following files/scripts are in this directory and should be executed in this order:</ins> 
 
 1. run_step04_a_CAQU_SNPRelate_LDandMAFpruning_20240821.sh - Wrapper script needed to submit Step 2
 2. step04_a_CAQU_SNPRelate_LDandMAFpruning_20240821.R - Perform linkage disequilibrium (LD) and minor allele frequency (MAF) filtering on VCF, output GDS file 
