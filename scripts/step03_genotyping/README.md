@@ -1,4 +1,4 @@
-The following files/scripts are in this directory and should be executed in this order: 
+### <ins>The following files/scripts are in this directory and should be executed in this order:</ins> 
 
 1. step03_a_CAQU_GenotypeGVCF_ExcludeList_20240512.sh - Perform joint genotyping on samples
 2. step03_b_CAQU_TrimAlternates_VariantAnnotator_ExcludeList_20240531.sh - Trim alternative alleles and add standard annotation to VCF
@@ -8,6 +8,6 @@ The following files/scripts are in this directory and should be executed in this
 6. step03_d_CAQU_FilterTallyPlot_20240613.R - Visualize the output of Step 6 "step03_d_CAQU_FilterTally_20240612.sh"
 7. step03_e_CAQU_CatVariants_mergeScaffolds_20240613.sh - Concatenate scaffold-level VCFs, all-sites VCF
 8. step03_f_CAQU_SelectVariantsSNPS_GetPassSites_20240613.sh - Select biallelic SNPs for final VCF
-9. Annotations and Coverage/ - Directory containing scripts needed to query VCF annotations to get filtering cutoffs and thresholds
-10. Intervals/ - Directory of genomic intervals that are used for "scatter-gather" parallelization in GATK
-11. Masking/ - Directory of files needed to create a masking file of repetitive regions across the genome needed in joint genotyping 
+9. Annotations and Coverage/ - Subdirectory containing scripts needed to query VCF annotations to get filtering cutoffs and thresholds
+10. Intervals/ - Subdirectory of genomic intervals that are used for "scatter-gather" parallelization in GATK
+11. Masking/ - Subdirectory of files needed to create a masking file of repetitive regions across the genome needed in joint genotyping 
