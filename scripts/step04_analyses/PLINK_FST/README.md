@@ -1,4 +1,4 @@
-### The following files/scripts are in this directory and should be executed in this order: 
+### <ins>The following files/scripts are in this directory and should be executed in this order:</ins> 
 
 1. step04_a_CAQU_Plink_Fst_20240820.sh - Script to run Plink on all SAMO samples
 2. step04_a_CAQU_Plink_Fst_unrelated_20250901.sh - script to run Plink on all unrelated samples
@@ -7,7 +7,7 @@
 5. popid.txt - input for Plink based on all SAMO samples
 6. popid_unrelated.txt - input for Plink based on unrelated SAMO samples
 
-### Metadata
+### <ins>Metadata</ins> 
 #### *20240820_CAQU_Locations.csv*
 | Column Name | Data Type | Description | Comments |
 | :---: | :---: | :---: | :---: | 
