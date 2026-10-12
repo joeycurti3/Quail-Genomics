@@ -1,4 +1,4 @@
-The following files/scripts are in this directory and should be executed in this order: 
+### <ins>The following files/scripts are in this directory and should be executed in this order:</ins> 
 
 1. step03_a_CAQU_getCombDP_20240602.sh - Get all SNPs in a VCF that has already had VariantAnnotator run on it and export to a table
 2. step03_a_CAQU_getCombDP_20240602.R - take the table from #1 and query the depth field to determine the 99th percentile of depth across all samples
