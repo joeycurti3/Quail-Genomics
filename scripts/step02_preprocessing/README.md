@@ -1,4 +1,4 @@
-The following files/scripts are in this directory and should be executed in this order: 
+### <ins>The following files/scripts are in this directory and should be executed in this order:</ins> 
 
 1. step02_a_CAQU_fastqc_20240404.sh - Run Fastqc on all fastq files to assess quality 
 2. step02_b_CAQU_FastqToSam_MarkAdapters_20240423.sh - Mark illumina adapters and create an unmapped BAM file needed in downstream steps
