@@ -15,14 +15,12 @@
 | Column 1 | character | Sample name | NA |
 | Column 2 | character | Sampling location name | NA |
 
-### <ins>Metadata</ins> 
 #### *SNPRelate_SideID_unrelated_SAMO_20240822.csv*
 | Column Name | Data Type | Description | Comments |
 | :---: | :---: | :---: | :---: | 
 | Column 1 | character | Sample name | NA |
 | Column 2 | numeric | Number (1,2) indicating what side (North/South or East/West) the sample came from | NA |
 
-### <ins>Metadata</ins> 
 #### *SNPRelate_PopID_unrelated_SAMO_v2_20240822.csv*
 | Column Name | Data Type | Description | Comments |
 | :---: | :---: | :---: | :---: | 
