@@ -18,6 +18,8 @@
 16. samples_v2.txt - Sample names for input into Step 1
 17. GCA_023055505.1_bCalCai1.0.p_PassSNPs_unrelated_SAMO_chr1.coord - Coordinates for polygon around area where EEMS analysis will run, needs to have same prefix as outputs of Step 1
 
+Note: eems is run for 100, 200, and 300 nDemes, or the number of partitions on the landscape. Further, for each value of nDemes, I also run 3 replicate MCMC chains.
+
 ### <ins>Important note to run these scripts:</ins> 
 Currently, bed2diffs cannot handle organisms with atypical chromosomal configurations (i.e., scaffold level assemblies).
 
