@@ -20,11 +20,11 @@ awk 'NR==FNR{a[$1][$0];next} $0 in a {for (i in a[$0]) print i}' chrom_lengths.t
 #### *mean_het.csv*
 | Column Name | Data Type | Description | Comments |
 | :---: | :---: | :---: | :---: | 
-| individuals | character | Name of the sample | NA
-| mean_het | numeric | Value of per base pair heterozygosity | Units: heterozygote/basepair of sequence
+| individuals | character | Name of the sample | NA |
+| mean_het | numeric | Value of per base pair heterozygosity | Units: heterozygote/basepair of sequence |
 
 #### *subset_chrom_lengths_2024.txt*
 | Column Name | Data Type | Description | Comments |
 | :---: | :---: | :---: | :---: | 
-| Column 1 | character | GenBanc accession number for scaffold | NA
-| Column 2 | numeric | Sequence length of scaffold | NA
+| Column 1 | character | GenBank accession number for scaffold | NA |
+| Column 2 | numeric | Sequence length of scaffold | Units: basepairs |
