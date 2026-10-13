@@ -2,3 +2,9 @@ This directory contains a .gff file outputted from RepeatMasker of all repeat re
 
 1) step03_a_CAQU_Gff2Bed_20240918.py - this converts the .gff file to a .bed file
 2) step03_b_CAQU_RepeatMaskerBed_20240918.sh - this sorts the .bed file and removes the header 
+
+Referenced paper:
+Benham, P.M., Cicero, C., Davila, M.M., Enbody, E.D., Miller, K.S., Shultz, A.J., Smith, L.L., Nachman, M.W. and Bowie, R.C.K. (2025), Patterns of Genetic Diversity Within Three California Quail Species Are Best Explained by Climate and Landscape Changes. Mol Ecol, 34: e70093. https://doi.org/10.1111/mec.70093
+
+
+
