@@ -1,9 +1,9 @@
 ### <ins>The following files/scripts are in this directory and should be executed in this order:</ins> 
 
-1. run_step04_a_CAQU_SlidingWindowHet_20240623 - wrapper script for step04_a_CAQU_SlidingWindowHet_20240623.py
+1. run_step04_a_CAQU_SlidingWindowHet_20240623.sh - wrapper script for step04_a_CAQU_SlidingWindowHet_20240623.py
 2. step04_a_CAQU_SlidingWindowHet_20240623.py - script to calculate sliding window heterozygosity per sample
 3. step04_b_SlidingWindowHet_plot_20240625.R - script to visualize output of #2
-4. step04_c_CAQU_hetsignif_20240902 - script to calculate stats related to site-level mean het
+4. step04_c_CAQU_hetsignif_20240902.R - script to calculate stats related to site-level mean het
 5. mean_het.csv - Output of mean per basepair heterozygosity by sample
 6. subset_chrom_lengths_2024.txt - Text file of chromosomes of interest and their associated length, based on the NCBI Assembly Report for the reference genome 
 (https://ftp.ncbi.nlm.nih.gov/genomes/all/GCA/023/055/505/GCA_023055505.1_bCalCai1.0.p/GCA_023055505.1_bCalCai1.0.p_assembly_report.txt)
